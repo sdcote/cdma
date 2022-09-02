@@ -1,0 +1,8 @@
+
+<div *ngIf="loading && !error; else showForm" class="spinner">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>
+
+<ng-template #showForm>
+  <app-survey-form [responses]="responses" [subjects]="subjects" [submitting]="submitting" [fieldsErrors]="fieldsErrors" (onSubmitForm)="submitForm($event)"></app-survey-form>
+</ng-template>
